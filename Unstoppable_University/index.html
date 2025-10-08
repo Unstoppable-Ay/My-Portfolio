@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unstoppable University</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+</head>
+<body>
+
+  <!-- ================== NAVBAR ================== -->
+  <header>
+    <nav class="navbar">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="images/university-logo.png" alt="Unstoppable University Logo">
+        <span class="university-name">UNSTOPPABLE UNIVERSITY</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="campus-life.html">Campus Life</a></li>
+        <li><a href="news-events.html">News & Events</a></li>
+        <li><a href="contact.html" class="btn-apply">Apply Now</a></li>
+      </ul>
+
+      <!-- Hamburger Menu for Mobile -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+<!-- ================== HERO SECTION ================== -->
+<section class="hero">
+  <!-- Canvas for particle background -->
+  <canvas id="heroCanvas"></canvas>
+
+  <!-- Overlay to make text readable -->
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>
+      <span id="typewriter"></span>
+      </h1>
+      <p>Join Unstoppable University and start your journey to greatness today.</p>
+      <div class="hero-buttons">
+        <a href="admissions.html" class="btn-primary">Apply Now</a>
+        <a href="academics.html" class="btn-secondary">Explore Programs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ================== ABOUT US ================== -->
+  <section class="about" id="about">
+    <!-- Image: students in lecture hall -->
+    <div class="about-container">
+      <div class="about-text">
+        <h2>A Legacy of Excellence</h2>
+        <p>At Unstoppable University, we are committed to raising global leaders who combine knowledge, character, and innovation to solve the world’s challenges. Our foundation is built on excellence, integrity, and impact, preparing students to transform societies.</p>
+        <a href="about.html" class="btn-primary">Learn More About Us</a>
+      </div>
+      <div class="about-image">
+        <img src="images/students-lecture.jpg" alt="Students in lecture hall">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== ACADEMIC PROGRAMS ================== -->
+  <section class="academics" id="academics">
+    <h2>World-Class Academic Faculties</h2>
+    <p>From cutting-edge sciences to the arts, business, and engineering, our faculties equip students with relevant skills for the 21st century.</p>
+    <div class="academics-cards">
+      <!-- Images needed: faculty icons or representative images -->
+      <div class="card">
+        <img src="images/engineering.jpg" alt="Faculty of Engineering">
+        <h3>Faculty of Engineering</h3>
+      </div>
+      <div class="card">
+        <img src="images/business.jpg" alt="Faculty of Business & Management">
+        <h3>Faculty of Business & Management</h3>
+      </div>
+      <div class="card">
+        <img src="images/arts.jpg" alt="Faculty of Arts & Social Sciences">
+        <h3>Faculty of Arts & Social Sciences</h3>
+      </div>
+      <div class="card">
+        <img src="images/science.jpg" alt="Faculty of Natural & Applied Sciences">
+        <h3>Faculty of Natural & Applied Sciences</h3>
+      </div>
+      <div class="card">
+        <img src="images/law.jpg" alt="Faculty of Law & Governance">
+        <h3>Faculty of Law & Governance</h3>
+      </div>
+    </div>
+    <a href="academics.html#faculties" class="btn-primary">Explore All Programs</a>
+  </section>
+
+  <!-- ================== WHY CHOOSE US ================== -->
+  <section class="why-choose" id="why-choose">
+    <h2>Why Students Choose Unstoppable University</h2>
+    <div class="choose-cards">
+      <div class="choose-card">
+        <span>🎓</span>
+        <h3>Globally Recognized Degrees</h3>
+      </div>
+      <div class="choose-card">
+        <span>🌍</span>
+        <h3>International Exchange Opportunities</h3>
+      </div>
+      <div class="choose-card">
+        <span>💡</span>
+        <h3>Innovation & Entrepreneurship Hub</h3>
+      </div>
+      <div class="choose-card">
+        <span>🏆</span>
+        <h3>State-of-the-Art Campus Facilities</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== CAMPUS LIFE ================== -->
+  <section class="campus-life" id="campus-life">
+    <h2>Experience Vibrant Campus Life</h2>
+    <!-- Images needed: hostels, library, sports, tech hub -->
+    <div class="campus-slider" id="campusSlider">
+      <div class="slide"><img src="images/hostel.jpg" alt="Hostel Building"></div>
+      <div class="slide"><img src="images/library.jpg" alt="Library"></div>
+      <div class="slide"><img src="images/sports.jpg" alt="Sports Center"></div>
+      <div class="slide"><img src="images/techhub.jpg" alt="Tech Hub"></div>
+    </div>
+  </section>
+
+  <!-- ================== NEWS & EVENTS ================== -->
+  <section class="news-events" id="news-events">
+    <h2>Stay Updated</h2>
+    <div class="news-cards">
+      <div class="news-card">
+        <img src="images/convocation.jpg" alt="Convocation Ceremony">
+        <h3>Convocation Ceremony 2025</h3>
+        <p>Join us in celebrating our graduates with an inspiring ceremony.</p>
+      </div>
+      <div class="news-card">
+        <img src="images/research.jpg" alt="International Research Conference">
+        <h3>International Research Conference</h3>
+        <p>Leading scholars gather to discuss breakthroughs and innovations.</p>
+      </div>
+      <div class="news-card">
+        <img src="images/innovation.jpg" alt="Student Innovation Challenge">
+        <h3>Student Innovation Challenge</h3>
+        <p>Our students showcase their entrepreneurial and tech talents.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== TESTIMONIALS ================== -->
+  <section class="testimonials" id="testimonials">
+    <h2>Voices of Impact</h2>
+    <div class="testimonial-slider" id="testimonialSlider">
+      <div class="testimonial">
+        <p>"Unstoppable University gave me the platform to build my global career."</p>
+        <h4>- Alumna, Class of 2018</h4>
+      </div>
+      <div class="testimonial">
+        <p>"The teaching quality and facilities are unmatched in Africa."</p>
+        <h4>- Current Student</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Partnerships with industries helped me launch my startup."</p>
+        <h4>- Entrepreneur Graduate</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== CALL TO ACTION ================== -->
+  <section class="cta">
+    <h2>Your Journey to Greatness Begins Here</h2>
+    <a href="admissions.html" class="btn-primary">Apply for Admission</a>
+  </section>
+
+  <!-- ================== FOOTER ================== -->
+  <footer>
+    <div class="footer-container">
+      <!-- About -->
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Unstoppable University is dedicated to academic excellence, leadership development, and global impact.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="campus-life.html">Campus Life</a></li>
+          <li><a href="news-events.html">News & Events</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: info@unstoppableuni.edu</p>
+        <p>Phone: +234 800 123 4567</p>
+        <p>Address: Km 10, Green Road, Lagos, Nigeria</p>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <form>
+          <input type="email" placeholder="Enter your email">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Unstoppable University. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,414 @@
+/* Reset */ 
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+body { 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  color: white; 
+  min-height: 100vh; 
+  margin-top: 12%;
+  justify-content: center; 
+  align-items: center; 
+  padding: 20px; 
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative; 
+  background: linear-gradient(-45deg, #1e3c72, #2a5298, #0f2027, #203a43); 
+  background-size: 400% 400%; 
+  animation: gradientShift 12s ease infinite; 
+} 
+
+.section-title {
+  display: flex;
+  justify-content: center;    /* center everything together */
+  align-items: center;        /* align items vertically */
+  gap: 20px;                  /* space between logo, text, and clock */
+  font-size: 28px;
+  font-weight: bold;
+  margin: 25px 0 20px;
+  color: #ffcc00;
+  letter-spacing: 1px;
+  padding-bottom: 15px;
+ }
+
+.section-title img {
+  width: 105px;  
+  height: auto;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+}
+
+#planner-clock {
+  font-size: 18px;
+  font-weight: normal;
+  color: #ffffff;
+  letter-spacing: 1px;
+  background-color: #095390; 
+  border: none; 
+  padding: 10px 15px; 
+  border-radius: 8px; 
+  transition: background 0.3s ease; 
+}
+
+
+
+@keyframes gradientShift { 
+  0% { background-position: 0% 50%; } 
+  50% { background-position: 100% 50%; } 
+  100% { background-position: 0% 50%; } 
+} 
+
+/* Moving abstract circles */ 
+.background-circles { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  overflow: hidden; 
+  z-index: 0; 
+} 
+
+.background-circles span { 
+  position: absolute; 
+  display: block; 
+  width: 30px; 
+  height: 30px; 
+  background: rgba(255,255,255,0.1); 
+  border-radius: 50%; 
+  animation: moveCircles 25s linear infinite; 
+} 
+
+.background-circles span:nth-child(1) { 
+  left: 25%; width: 40px; height: 40px; animation-duration: 22s; 
+} 
+.background-circles span:nth-child(2) { 
+  left: 10%; width: 20px; height: 20px; animation-duration: 18s; 
+} 
+.background-circles span:nth-child(3) { 
+  left: 70%; width: 60px; height: 60px; animation-duration: 30s; 
+} 
+.background-circles span:nth-child(4) { 
+  left: 50%; width: 25px; height: 25px; animation-duration: 20s; 
+} 
+.background-circles span:nth-child(5) { 
+  left: 85%; width: 35px; height: 35px; animation-duration: 26s; 
+} 
+
+@keyframes moveCircles { 
+  0% { transform: translateY(100vh) scale(0); opacity: 0.4; } 
+  100% { transform: translateY(-10vh) scale(1.5); opacity: 0; } 
+} 
+
+.card { 
+  background: rgba(255, 255, 255, 0.08); 
+  border: 1px solid rgba(255, 255, 255, 0.15); 
+  padding: 24px; 
+  border-radius: 20px; 
+  text-align: center; 
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6); 
+  backdrop-filter: blur(12px); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+} 
+
+.card:hover { 
+  transform: translateY(-6px); 
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7); 
+} 
+
+h2 { 
+  font-size: 24px; 
+  margin-bottom: 18px; 
+  color: #ffcc00; 
+} 
+
+/* To-Do Section */ 
+.input-section { 
+  display: flex; 
+  gap: 10px; 
+  margin-bottom: 16px; 
+} 
+
+.input-section input { 
+  flex: 1; 
+  padding: 10px; 
+  border: none; 
+  border-radius: 8px; 
+  font-size: 16px; 
+} 
+
+.input-section button { 
+  background-color: #00c3ff; 
+  border: none; 
+  color: white; 
+  padding: 10px 15px; 
+  font-size: 16px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: background 0.3s ease; 
+} 
+
+.input-section button:hover { 
+  background-color: #009ecc; 
+} 
+
+#task-list { 
+  list-style: none; 
+  margin-top: 10px; 
+  max-height: 250px; /* limit height of the list */ 
+  overflow-y: auto; /* add scroll if tasks are too many */ 
+  padding-right: 5px; /* small gap for scrollbar */ 
+} 
+
+/* Optional: style the scrollbar (only visible when tasks overflow) */ 
+#task-list::-webkit-scrollbar { 
+  width: 6px; 
+} 
+#task-list::-webkit-scrollbar-thumb { 
+  background: #00c3ff; 
+  border-radius: 10px; 
+} 
+#task-list::-webkit-scrollbar-track { 
+  background: rgba(255, 255, 255, 0.1); 
+} 
+
+#task-list li { 
+  background: rgba(255, 255, 255, 0.1); 
+  margin-bottom: 10px; 
+  padding: 10px; 
+  border-radius: 6px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+} 
+
+#task-list li.completed { 
+  text-decoration: line-through; 
+  color: #aaa; 
+} 
+
+.task-buttons button { 
+  margin-left: 8px; 
+  background: transparent; 
+  border: none; 
+  cursor: pointer; 
+  font-size: 16px; 
+  color: #ffcc00; 
+} 
+
+.task-buttons button:hover { 
+  color: #ff6666; 
+} 
+
+/* Weather Section */ 
+.search-box { 
+  display: flex; 
+  gap: 10px; 
+  margin-bottom: 20px; 
+} 
+
+.search-box input { 
+  flex: 1; 
+  padding: 10px; 
+  border: none; 
+  border-radius: 8px; 
+  font-size: 16px; 
+} 
+
+.search-box button { 
+  background-color: #00c3ff; 
+  border: none; 
+  color: white; 
+  padding: 10px 15px; 
+  font-size: 16px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: background 0.3s ease; 
+} 
+
+.search-box button:hover { 
+  background-color: #009ecc; 
+} 
+
+.weather-result h3 { 
+  font-size: 20px; 
+  margin-bottom: 10px; 
+} 
+
+.weather-result p { 
+  font-size: 16px; 
+  margin: 5px 0; 
+} 
+
+.weather-result img { 
+  margin-top: 10px; 
+  width: 80px; 
+} 
+
+/* Spinner */ 
+.spinner { 
+  border: 4px solid rgba(255, 255, 255, 0.2); 
+  border-top: 4px solid #00c3ff; 
+  border-radius: 50%; 
+  width: 32px; 
+  height: 32px; 
+  margin: 20px auto; 
+  animation: spin 1s linear infinite; 
+} 
+
+@keyframes spin { 
+  0% { transform: rotate(0deg); } 
+  100% { transform: rotate(360deg); } 
+} 
+
+#bg-particles { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  z-index: 0; 
+} 
+
+.dashboard-container { 
+  position: relative; 
+  z-index: 2; 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 24px; 
+  width: 100%; 
+  max-width: 1000px; 
+  margin: 0 auto; 
+} 
+
+/* Responsive */ 
+@media (max-width: 768px) { 
+  .dashboard-container { 
+    grid-template-columns: 1fr; 
+  } 
+} 
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+  body {
+    margin-top: 18%;
+    padding: 10px;
+  }
+
+  .section-title {
+    flex-direction: column;
+    text-align: center;
+    font-size: 24px;
+    gap: 10px;
+  }
+
+  .section-title img {
+    width: 80px;
+  }
+
+  #planner-clock {
+    font-size: 15px;
+    padding: 8px 10px;
+  }
+
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    max-width: 90%;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 600px) {
+  body {
+    margin-top: 4%;
+    padding: 15px;
+    overflow: auto;
+  }
+
+  .section-title {
+    font-size: 20px;
+    flex-direction: column;
+    gap: 6px;
+    margin: 15px 0;
+  }
+
+  .section-title img {
+    width: 65px;
+  }
+
+  #planner-clock {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 100%;
+  }
+
+  .card {
+    padding: 16px;
+    border-radius: 15px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .input-section,
+  .search-box {
+    flex-direction: column;
+  }
+
+  .input-section input,
+  .search-box input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .input-section button,
+  .search-box button {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .weather-result img {
+    width: 60px;
+  }
+
+  #task-list {
+    max-height: 200px;
+  }
+}
+
+/* Larger screens (big desktops) */
+@media (min-width: 1400px) {
+  body {
+    margin-top: 10%;
+  }
+
+  .dashboard-container {
+    max-width: 1100px;
+  }
+
+  .card {
+    padding: 28px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+}

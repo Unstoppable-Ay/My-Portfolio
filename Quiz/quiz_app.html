@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>General Knowledge Quiz</title>
+  <link rel="stylesheet" href="quiz_app.css">
+</head>
+<body>
+  <div id="splash-screen" class="splash">
+    <div class="splash-circle">
+      <img src="Unstoppable logo.png" alt="Unstoppable AY Logo" class="quiz-logo_2">
+      <h1>⚡ Unstoppable AY</h1>
+      <p>Built with Passion</p>
+    </div>
+    <canvas id="splash-particles"></canvas>
+  </div>
+  <main class="app-shell">
+    <div class="quiz-card" id="quiz">
+      <header class="quiz-header">
+        <div class="quiz-title">
+          <img src="Unstoppable logo.png" alt="Unstoppable AY Logo" class="quiz-logo">
+          <h1>General Knowledge Quiz</h1>
+        </div>
+        <div class="top-row">
+          <div class="progress">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="status">
+            <span id="q-count">Question 1 of 20</span>
+            <span id="timer" class="timer">20s</span>
+          </div>
+        </div>
+        <button id="sound-toggle" class="sound-toggle" aria-pressed="false" title="Toggle sound">
+          🔊 Sound On
+        </button>
+      </header>
+
+      <section id="question-box" class="question-box">
+        <h2 id="question" class="question">Loading…</h2>
+        <div class="options" id="options">
+          <button class="option-btn" data-index="0"></button>
+          <button class="option-btn" data-index="1"></button>
+          <button class="option-btn" data-index="2"></button>
+          <button class="option-btn" data-index="3"></button>
+        </div>
+        <div class="controls">
+          <button id="next-btn" class="next-btn" disabled>Next</button>
+        </div>
+      </section>
+
+      <section id="score-box" class="score-box" hidden>
+        <h2>All Done 🎉</h2>
+        <p id="score"></p>
+        <div class="controls">
+          <button id="restart-btn" class="next-btn">Restart</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <audio id="sfx-correct" src="correct.mp3" preload="auto"></audio>
+  <audio id="sfx-wrong" src="wrong.mp3" preload="auto"></audio>
+  <audio id="sfx-timeout" src="timeout.mp3" preload="auto"></audio>
+  <audio id="sfx-tick" src="tick.mp3" preload="auto"></audio>
+
+  <script src="quiz_app.js"></script>
+</body>
+</html>
